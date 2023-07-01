@@ -20,8 +20,11 @@ export function Post() {
       <div className={styles.content}>
         <p>Fala galera 👋</p>
         <p>Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀</p>
-        <p><a href="#">👉 jane.design/doctorcare</a></p>
-        <p><a href="#">#neverstoplearning</a></p>
+        <p><a href="">👉 leonardo.design/doctorcare</a></p>
+        <p>
+          <a href="">#neverstoplearning</a>{' '} {/* Item para adicionar espaços dentro do JSX  */}
+          <a href="">#nlw</a>
+        </p>
 
       </div>
     </article>
