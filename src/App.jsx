@@ -7,6 +7,50 @@ import styles from './App.module.css';
 import './global.css';
 
 
+const posts = [
+  {
+    id: 1,
+    author: {
+      avatarUrl: "https://github.com/leonardoffirmino.png",
+      name: "Leonardo Ferreira Firmino",
+      role: "BackEnd Developer"
+    },
+    content: [
+      {
+        type: 'paragraph', content: 'Fala galera 👋'
+      },
+      {
+        type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀',
+      },
+      {
+        type: 'link', content: '👉 leonardo.design/doctorcare'
+      }
+    ],
+    publishAt: new Date('2023-07-11 21:20:00'),
+  },
+
+  {
+    id: 2,
+    author: {
+      avatarUrl: "https://github.com/diego3g.png",
+      name: "Diego Fernandes",
+      role: "CTO Rocketseat"
+    },
+    content: [
+      {
+        type: 'paragraph', content: 'Fala galera 👋'
+      },
+      {
+        type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀',
+      },
+      {
+        type: 'link', content: '👉 leonardo.design/doctorcare'
+      }
+    ],
+    publishAt: new Date('2023-07-09 11:20:00'),
+  }
+];
+
 export function App() {
 
 
@@ -18,15 +62,15 @@ export function App() {
         <Sidebar />
 
         <main>
-          <Post
-            author="Leonardo Ferreira"
-            content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis dolores nulla adipisci magnam maiores ab natus consequuntur. Aliquid explicabo magnam reprehenderit, voluptas consectetur, maxime, in odio veritatis nihil similique nemo."
-          />
-
-          <Post
-            author="Leonardo"
-            content="Mais um post referente a propriedades REACTjs"
-          />
+          {posts.map(post => {
+            return (
+              <Post
+                author={post.author}
+                content={post.content}
+                publishedAt={post.publishAt}
+              />
+            )
+          })}
         </main>
       </div>
 
